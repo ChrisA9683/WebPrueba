@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dossier Clínico de Péptidos | Veltrix Labs</title>
+  <meta name="description"
+    content="Dossier clínico completo de péptidos bioactivos de Veltrix Labs: Retatrutide, BPC-157, GHK-Cu, TB-500, KPV, NAD+, GH Secretagogos y Epitalon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div class="logo-text">VELTRIX<span>LABS</span></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">← Volver al Inicio</a>
+        <a href="index.html#research">Áreas de Investigación</a>
+        <a href="index.html#contact" class="btn btn-primary">Contacto Médico</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- DOSSIER HERO -->
+  <section class="dossier-hero">
+    <div class="container">
+      <div class="dossier-hero-content">
+        <span class="eyebrow">Dossier Científico 2026</span>
+        <h1>Catálogo Clínico de Péptidos Bioactivos</h1>
+        <p>Especificaciones técnicas, vías de señalización celular, protocolos de administración y sinergias terapéuticas de grado analítico (>99% de pureza HPLC).</p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="dossier-filters">
+        <button class="filter-tab active" data-filter="all">Todos los Péptidos</button>
+        <button class="filter-tab" data-filter="metabolic">Metabólicos &amp; Apetito</button>
+        <button class="filter-tab" data-filter="regenerative">Regeneración Tisular</button>
+        <button class="filter-tab" data-filter="antiaging">Anti-Aging &amp; Piel</button>
+        <button class="filter-tab" data-filter="longevity">Longevidad &amp; Celular</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOSSIER GRID -->
+  <section class="dossier-section">
+    <div class="container">
+      <div class="dossier-cards-grid" id="dossierGrid">
+        <!-- Rendered dynamically from products-data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <div class="logo-text">VELTRIX<span>LABS</span></div>
+        </div>
+        <p style="color: #94a3b8; font-size: 0.9rem;">Investigación clínica y biotecnología aplicada a la salud metabólica.</p>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Veltrix Labs. Todos los derechos reservados.</p>
+        <div class="footer-legal">
+          <a href="index.html">Inicio</a>
+          <a href="index.html#research">Investigación</a>
+          <a href="index.html#contact">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/12345678900?text=Hola%20Veltrix%20Labs%2C%20deseo%20consultar%20el%20Dossier%20de%20P%C3%A9ptidos" 
+     class="whatsapp-fab" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp">
+    <span class="whatsapp-tooltip">Consultar Dossier</span>
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16 2a13.9 13.9 0 0 0-12 20.9L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4A11.6 11.6 0 1 1 16 27.5zm6.4-8.6c-.4-.2-2.1-1-2.4-1.2-.4-.1-.6-.2-.9.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1a10.1 10.1 0 0 1-5-4.4c-.4-.7.4-.6 1.1-2 .1-.2.1-.4 0-.5-.1-.2-.9-2.1-1.2-2.9-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.4-1.4 3.3s1.5 3.8 1.7 4.1c.2.3 2.9 4.4 7 6.2 3.4 1.5 4.1 1.2 4.9 1.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.2-.4-.3-.8-.5z"/>
+    </svg>
+  </a>
+
+  <script src="products-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('dossierGrid');
+      if (!grid || typeof PRODUCTS_DATA === 'undefined') return;
+
+      function renderCards(filter = 'all') {
+        grid.innerHTML = '';
+        Object.values(PRODUCTS_DATA).forEach(prod => {
+          // Category matching
+          let match = false;
+          if (filter === 'all') match = true;
+          else if (filter === 'metabolic' && prod.category.toLowerCase().includes('metabolic')) match = true;
+          else if (filter === 'regenerative' && (prod.category.toLowerCase().includes('regenerative') || prod.category.toLowerCase().includes('recovery'))) match = true;
+          else if (filter === 'antiaging' && prod.category.toLowerCase().includes('anti-aging')) match = true;
+          else if (filter === 'longevity' && (prod.category.toLowerCase().includes('longevity') || prod.category.toLowerCase().includes('wellness') || prod.category.toLowerCase().includes('growth'))) match = true;
+
+          if (!match) return;
+
+          const card = document.createElement('div');
+          card.className = 'dossier-full-card';
+          card.id = prod.id;
+
+          const indicationsHtml = prod.indications.map(ind => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>${ind}</li>`).join('');
+
+          card.innerHTML = `
+            <div class="dossier-card-header">
+              <div class="dossier-card-img">
+                <img src="${prod.image}" alt="${prod.name}">
+                <span class="purity-badge">${prod.purity}</span>
+              </div>
+              <div class="dossier-card-summary">
+                <span class="compound-tag">${prod.category}</span>
+                <h2>${prod.name}</h2>
+                <span class="dossier-badge-sub">${prod.badge}</span>
+                <p class="summary-text">${prod.summary}</p>
+                
+                <div class="dossier-quick-specs">
+                  <div><strong>Dosis:</strong> <span>${prod.dose}</span></div>
+                  <div><strong>Vía:</strong> <span>${prod.protocol}</span></div>
+                  <div><strong>Frecuencia:</strong> <span>${prod.frequency}</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dossier-card-details">
+              <div class="dossier-col">
+                <h4>Mecanismo de Acción</h4>
+                <p>${prod.mechanism}</p>
+                <div class="stack-box">
+                  <strong>Stack Sinergia:</strong> ${prod.stack}
+                </div>
+              </div>
+
+              <div class="dossier-col">
+                <h4>Indicaciones Principales</h4>
+                <ul class="dossier-indications-list">
+                  ${indicationsHtml}
+                </ul>
+              </div>
+            </div>
+
+            <div class="dossier-card-footer">
+              <div class="contra-warning">
+                <strong>Precaución / Contraindicación:</strong>
+                <p>${prod.contraindications}</p>
+              </div>
+              <a href="https://wa.me/12345678900?text=${encodeURIComponent(prod.whatsappText)}" 
+                 target="_blank" rel="noopener noreferrer" class="btn btn-primary dossier-wa-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm-3.53 4.42c-.2 0-.45.07-.68.32-.24.25-.9 0.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.77 2.76 4.34 3.84 2.14.9 2.58.72 3.05.68.47-.05 1.51-.62 1.72-1.22.21-.6.21-1.12.15-1.22-.06-.11-.24-.17-.5-.3-.27-.13-1.57-.78-1.81-.87-.24-.09-.42-.13-.59.13-.18.27-.69.87-.85 1.05-.16.17-.32.2-.59.07-.27-.13-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.13-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.5-.01z"/>
+                </svg>
+                Consultar Protocolo de ${prod.name}
+              </a>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      renderCards();
+
+      // Filter tabs interaction
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          renderCards(tab.dataset.filter);
+        });
+      });
+
+      // Handle hash anchor jump
+      if (window.location.hash) {
+        setTimeout(() => {
+          const el = document.querySelector(window.location.hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 200);
+      }
+    });
+  </script>
+</body>
+</html>
