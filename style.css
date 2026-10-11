@@ -128,30 +128,40 @@ img {
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   text-decoration: none;
+  max-height: 46px;
 }
 
+.logo img,
 .site-logo-img {
-  height: 44px;
-  width: auto;
-  max-width: 220px;
-  object-fit: contain;
+  height: 42px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 200px !important;
+  object-fit: contain !important;
   display: block;
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
+.logo:hover img,
 .logo:hover .site-logo-img {
   transform: scale(1.03);
   opacity: 0.95;
 }
 
+.footer-logo .logo {
+  max-height: 54px;
+}
+
+.footer-logo img,
 .site-footer-logo-img {
-  height: 52px;
-  width: auto;
-  max-width: 250px;
-  object-fit: contain;
+  height: 48px !important;
+  max-height: 48px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  object-fit: contain !important;
   display: block;
 }
 
