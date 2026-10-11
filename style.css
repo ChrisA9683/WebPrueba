@@ -130,27 +130,29 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  text-decoration: none;
 }
 
-.logo-mark {
-  width: 24px;
-  height: 24px;
-  background-color: var(--color-accent);
-  border-radius: 4px;
+.site-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
-.logo-text {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-primary);
-  letter-spacing: 0.5px;
+.logo:hover .site-logo-img {
+  transform: scale(1.03);
+  opacity: 0.95;
 }
 
-.logo-text span {
-  font-weight: 300;
-  color: var(--color-text-light);
+.site-footer-logo-img {
+  height: 52px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-links {
