@@ -39,13 +39,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form handling
+  // Form handling via FormSubmit AJAX
   const form = document.getElementById('contactForm');
   if(form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      alert('Thank you for registering your interest. Our coordination team will reach out from info@veltrixlabs.com.');
-      form.reset();
+      const submitBtn = document.getElementById('submitBtn') || form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Message';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Transmitting inquiry...';
+      }
+
+      // Correo oficial del cliente:
+      const targetEmail = 'veltrixlaboratory@gmail.com';
+
+      const formData = new FormData(form);
+      formData.append('_subject', 'New Clinical Trial Inquiry - Veltrix Labs');
+      formData.append('_template', 'table');
+      formData.append('_captcha', 'false');
+
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        const statusBox = document.getElementById('formStatusMsg');
+        function showStatus(type, title, message) {
+          if (statusBox) {
+            statusBox.className = `form-status-msg ${type}`;
+            const iconSvg = type === 'success' 
+              ? '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+              : (type === 'error'
+                ? '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>'
+                : '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>');
+            statusBox.innerHTML = `
+              <div class="status-icon">${iconSvg}</div>
+              <div class="status-text">
+                <strong>${title}</strong>
+                <p style="margin: 0.2rem 0 0; font-size: 0.88rem; line-height: 1.45;">${message}</p>
+              </div>
+            `;
+            statusBox.style.display = 'flex';
+          }
+        }
+
+        if (response.ok && (!result || result.success !== 'false')) {
+          showStatus('success', 'Inquiry Submitted Successfully', 'Thank you for reaching out to Veltrix Labs. Our clinical coordination team will evaluate your inquiry and follow up within 24 business hours.');
+          form.reset();
+        } else {
+          const errMsg = result && result.message ? result.message : 'Please try again or email us directly at veltrixlaboratory@gmail.com.';
+          showStatus('info', 'Submission Notice', errMsg);
+        }
+      } catch (err) {
+        const statusBox = document.getElementById('formStatusMsg');
+        if (statusBox) {
+          statusBox.className = 'form-status-msg error';
+          statusBox.innerHTML = `
+            <div class="status-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
+            <div class="status-text">
+              <strong>Connection Error</strong>
+              <p style="margin: 0.2rem 0 0; font-size: 0.88rem;">Could not submit inquiry. Please check your internet connection or email us directly.</p>
+            </div>
+          `;
+          statusBox.style.display = 'flex';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      }
     });
   }
 
@@ -54,7 +123,127 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Sony PS3 XMB Silk Waves
   initPS3Waves();
+
+  // Initialize Subtle Scroll Reveal
+  initScrollReveal();
+
+  // Initialize Stat Number Counters
+  initStatCounters();
 });
+
+// ==========================================
+// SCROLL-TRIGGERED ENTRANCE ANIMATIONS
+// ==========================================
+function initScrollReveal() {
+  const targets = document.querySelectorAll(
+    '.stat-item, .why-img-col, .why-text-col, .check-list li, .why-action-col, .section-header, .compound-card, .contact-card, .info-item, .contact-form-panel, .full-map'
+  );
+
+  if (!targets.length) return;
+
+  // Gentle, subtle cascading delays
+  document.querySelectorAll('.check-list').forEach(list => {
+    list.querySelectorAll('li').forEach((item, idx) => {
+      item.style.transitionDelay = `${idx * 0.05}s`;
+    });
+  });
+
+  document.querySelectorAll('.info-list').forEach(list => {
+    list.querySelectorAll('.info-item').forEach((item, idx) => {
+      item.style.transitionDelay = `${idx * 0.06}s`;
+    });
+  });
+
+  document.querySelectorAll('.compound-grid').forEach(grid => {
+    grid.querySelectorAll('.compound-card').forEach((card, idx) => {
+      card.style.transitionDelay = `${(idx % 4) * 0.07}s`;
+    });
+  });
+
+  document.querySelectorAll('.stats-container').forEach(container => {
+    container.querySelectorAll('.stat-item').forEach((item, idx) => {
+      item.style.transitionDelay = `${idx * 0.07}s`;
+    });
+  });
+
+  // Mark all target elements with scroll-animate class
+  targets.forEach(el => el.classList.add('scroll-animate'));
+
+  // Trigger stat counters when stats-bar enters view
+  function triggerStatsIfVisible() {
+    const statsBar = document.querySelector('.stats-bar');
+    if (statsBar && !statsBar.hasAttribute('data-counted')) {
+      const rect = statsBar.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.88 && rect.bottom >= 0) {
+        statsBar.setAttribute('data-counted', 'true');
+        runStatCounters();
+      }
+    }
+  }
+
+  // Modern IntersectionObserver with clear threshold
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+          triggerStatsIfVisible();
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -12% 0px', // Triggers when element is well inside the viewport
+      threshold: 0.05
+    });
+
+    targets.forEach(el => observer.observe(el));
+  } else {
+    // Fallback scroll listener
+    function checkReveal() {
+      const triggerBottom = window.innerHeight * 0.84;
+
+      targets.forEach(el => {
+        if (el.classList.contains('in-view')) return;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= triggerBottom && rect.bottom >= 0) {
+          el.classList.add('in-view');
+        }
+      });
+
+      triggerStatsIfVisible();
+    }
+
+    window.addEventListener('scroll', checkReveal, { passive: true });
+    window.addEventListener('resize', checkReveal, { passive: true });
+    setTimeout(checkReveal, 120);
+  }
+}
+
+function runStatCounters() {
+  document.querySelectorAll('.stat-counter').forEach(el => {
+    const target = parseFloat(el.getAttribute('data-target') || '0');
+    const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    const duration = 1400;
+    const start = performance.now();
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const current = (target * easeOut).toFixed(decimals);
+      el.textContent = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toFixed(decimals);
+      }
+    }
+
+    requestAnimationFrame(step);
+  });
+}
 
 // ==========================================
 // CLINICAL PRODUCT MODAL LOGIC
@@ -75,79 +264,33 @@ function initProductModal() {
     if (typeof PRODUCTS_DATA === 'undefined' || !PRODUCTS_DATA[id]) return;
     const prod = PRODUCTS_DATA[id];
 
-    const indicationsHtml = prod.indications.map(ind => `
-      <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        <span>${ind}</span>
-      </li>
-    `).join('');
-
     modalBody.innerHTML = `
-      <div class="modal-header-hero">
-        <div class="modal-img-col">
+      <div class="modal-showcase-card">
+        <div class="modal-showcase-img-pane">
           <img src="${prod.image}" alt="${prod.name}">
+          <span class="modal-showcase-purity">✓ HPLC >99% Pure</span>
         </div>
-        <div class="modal-header-info">
+
+        <div class="modal-showcase-info-pane">
           <span class="compound-tag">${prod.category}</span>
           <h2>${prod.name}</h2>
-          <span class="modal-badge-sub">${prod.badge}</span>
-          <span class="modal-purity">✓ Pureza HPLC: ${prod.purity}</span>
-        </div>
-      </div>
+          <span class="modal-showcase-badge">${prod.badge}</span>
 
-      <div class="modal-body-content">
-        <div class="modal-section-block">
-          <h4>Descripción Terapéutica</h4>
-          <p>${prod.summary}</p>
-        </div>
+          <p class="modal-showcase-desc">${prod.summary}</p>
 
-        <div class="modal-grid-2">
-          <div class="modal-spec-item">
-            <strong>Dosis Protocolizada</strong>
-            <span>${prod.dose}</span>
+          <div class="modal-showcase-chips">
+            <span class="spec-chip"><strong>Dose:</strong> ${prod.dose}</span>
+            <span class="spec-chip"><strong>Route:</strong> ${prod.protocol}</span>
           </div>
-          <div class="modal-spec-item">
-            <strong>Vía de Administración</strong>
-            <span>${prod.protocol}</span>
+
+          <div class="modal-showcase-actions">
+            <a href="products#${prod.id}" class="btn btn-outline" style="border-radius: 50px; font-size: 0.82rem; padding: 0.55rem 1rem;">
+              Full Dossier &rarr;
+            </a>
+            <a href="#contact" class="btn btn-primary" onclick="document.getElementById('productModal').classList.remove('active'); document.body.style.overflow='';" style="border-radius: 50px; font-size: 0.82rem; padding: 0.55rem 1.15rem;">
+              Contact Lab
+            </a>
           </div>
-          <div class="modal-spec-item">
-            <strong>Frecuencia / Ciclo</strong>
-            <span>${prod.frequency}</span>
-          </div>
-          <div class="modal-spec-item">
-            <strong>Stack Sinergia</strong>
-            <span>${prod.stack}</span>
-          </div>
-        </div>
-
-        <div class="modal-section-block">
-          <h4>Mecanismo de Acción Celular</h4>
-          <p>${prod.mechanism}</p>
-        </div>
-
-        <div class="modal-section-block">
-          <h4>Indicaciones Principales</h4>
-          <ul class="modal-indications-list">
-            ${indicationsHtml}
-          </ul>
-        </div>
-
-        <div class="modal-warning-box">
-          <strong>Advertencia &amp; Precauciones Médicas:</strong>
-          <p>${prod.contraindications}</p>
-        </div>
-
-        <div class="modal-actions-footer">
-          <a href="productos.html#${prod.id}" class="modal-dossier-link">
-            Ver Ficha Completa en Dossier &rarr;
-          </a>
-          <a href="#contact" class="btn btn-primary" onclick="document.getElementById('productModal').classList.remove('active'); document.body.style.overflow='auto';">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            Consultar con Especialista
-          </a>
         </div>
       </div>
     `;
@@ -156,12 +299,25 @@ function initProductModal() {
     document.body.style.overflow = 'hidden';
   }
 
-  // Bind click on all compound buttons
-  document.querySelectorAll('.compound-btn').forEach(btn => {
+  // Bind click on all compound plus buttons and whole card
+  document.querySelectorAll('.compound-btn-plus, .compound-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const id = btn.getAttribute('data-id');
       if (id) openModal(id);
+    });
+  });
+
+  document.querySelectorAll('.compound-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.compound-btn-plus')) return;
+      const btn = card.querySelector('.compound-btn-plus');
+      if (btn) {
+        const id = btn.getAttribute('data-id');
+        if (id) openModal(id);
+      }
     });
   });
 

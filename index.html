@@ -15,22 +15,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet" />
-  <link rel="icon" type="image/png" href="images/logo-hd.png" />
-  <link rel="stylesheet" href="style.css?v=1.3" />
+  <link rel="icon" type="image/png" href="images/logo/logo-hd.png" />
+  <link rel="stylesheet" href="style.css?v=4.6" />
+  <script>document.documentElement.classList.add('js-reveal');</script>
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="header" id="header">
     <div class="container header-container">
-      <a href="index.html" class="logo" aria-label="Veltrix Labs">
-        <img src="images/logo-hd.png" alt="Veltrix Labs" class="site-logo-img" style="height: 52px; width: auto; max-height: 54px; display: block;">
+      <a href="./" class="logo" aria-label="Veltrix Labs">
+        <img src="images/logo/logo-hd.png" alt="Veltrix Labs" class="site-logo-img" style="height: 52px; width: auto; max-height: 54px; display: block;">
       </a>
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#impact">Our Impact</a>
         <a href="#research">Research Areas</a>
-        <a href="productos.html">Dossier Clínico</a>
+        <a href="products">Clinical Dossier</a>
         <a href="#contact" class="btn btn-outline">Join a Study</a>
       </nav>
       <button class="mobile-menu-btn">
@@ -44,8 +45,8 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-image">
-      <img src="images/hero_lab_bg.jpg"
-        alt="Laboratory Researcher" />
+      <img src="images/principal/foto_principal.jpg"
+        alt="Veltrix Labs Clinical Facility" />
       <div class="hero-overlay"></div>
     </div>
     <div class="container">
@@ -63,106 +64,82 @@
     </div>
   </section>
 
-  <!-- DOMAINS (Services Style) -->
-  <section class="domains" id="services">
-    <canvas id="ps3WavesCanvas" class="ps3-waves-bg"></canvas>
-    <div class="container text-center">
-      <div class="domains-header">
-        <h2>Our <span>Research</span> Domains</h2>
-        <p>Comprehensive clinical solutions for metabolic and regenerative health.</p>
-      </div>
-      <div class="domains-grid">
-        <div class="domain-card">
-          <div class="domain-img">
-            <img src="images/appetite_control.jpg" alt="Appetite Control">
-          </div>
-          <div class="domain-content">
-            <h3>Appetite Control</h3>
-            <p>Advanced weight management protocols.</p>
-            <a href="#" class="domain-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        
-        <div class="domain-card">
-          <div class="domain-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Lab_Vial_%2849890675297%29.jpg" alt="Metabolics">
-          </div>
-          <div class="domain-content">
-            <h3>Metabolics</h3>
-            <p>Hormonal homeostasis treatments.</p>
-            <a href="#" class="domain-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        
-        <div class="domain-card">
-          <div class="domain-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Bromine_vial_in_acrylic_cube.jpg" alt="Anti-Aging">
-          </div>
-          <div class="domain-content">
-            <h3>Anti-Aging</h3>
-            <p>Cellular regeneration remodeling.</p>
-            <a href="#" class="domain-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        
-        <div class="domain-card">
-          <div class="domain-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Medical_Laboratory_Scientist_US_NIH.jpg" alt="Wellness">
-          </div>
-          <div class="domain-content">
-            <h3>Wellness</h3>
-            <p>Mitochondrial energy longevity.</p>
-            <a href="#" class="domain-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        
-        <div class="domain-card">
-          <div class="domain-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Ampoule_pharmaceutique.JPG" alt="Regenerative">
-          </div>
-          <div class="domain-content">
-            <h3>Regenerative</h3>
-            <p>Accelerated tissue repair.</p>
-            <a href="#" class="domain-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
+  <!-- STATS BAR - CLINICAL IMPACT -->
   <section class="stats-bar">
+    <div class="stats-glow-ambient"></div>
     <div class="container stats-container">
       
       <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H15M10 9H14M12 3V21M7 21H17M7 16H17M8.5 9L5 21M15.5 9L19 21"></path></svg>
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2v7.31M14 2v7.31M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0"/>
+            <path d="M5.52 16h12.96"/>
+          </svg>
+        </div>
         <div class="stat-text">
-          <h3>15+</h3>
-          <p>Clinical<br>Programs</p>
+          <div class="stat-number-row">
+            <h3><span class="stat-counter" data-target="15">15</span><span>+</span></h3>
+          </div>
+          <p class="stat-label">Clinical Programs</p>
+          <span class="stat-sub">Active Phase Pipelines</span>
         </div>
       </div>
       
+      <div class="stat-divider"></div>
+
       <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
         <div class="stat-text">
-          <h3>99.8%</h3>
-          <p>Peptide<br>Purity</p>
+          <div class="stat-number-row">
+            <h3><span class="stat-counter" data-target="99.8" data-decimals="1">99.8</span><span>%</span></h3>
+          </div>
+          <p class="stat-label">Peptide Purity</p>
+          <span class="stat-sub">HPLC &amp; MS Verified</span>
         </div>
       </div>
       
-      <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+      <div class="stat-divider"></div>
+
+      <div class="stat-item stat-item-highlight">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
         <div class="stat-text">
-          <h3>450K+</h3>
-          <p>Research<br>Datapoints</p>
+          <div class="stat-number-row">
+            <h3><span class="stat-counter" data-target="450">450</span><span>K+</span></h3>
+            <span class="stat-live-pulse"><span class="pulse-dot"></span> Active</span>
+          </div>
+          <p class="stat-label">Patients in Studies</p>
+          <span class="stat-sub">Multi-Center Cohort</span>
         </div>
       </div>
       
+      <div class="stat-divider"></div>
+
       <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"></path></svg>
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
         <div class="stat-text">
-          <h3>30+</h3>
-          <p>Global<br>Partners</p>
+          <div class="stat-number-row">
+            <h3><span class="stat-counter" data-target="30">30</span><span>+</span></h3>
+          </div>
+          <p class="stat-label">Global Partners</p>
+          <span class="stat-sub">Research Network</span>
         </div>
       </div>
       
@@ -218,10 +195,10 @@
       <!-- Right Column (Action) -->
       <div class="why-action-col">
         <h3>Need Trial Support?</h3>
-        <p>We are available 24/7 for enrollment inquiries. Your health is our priority.</p>
-        <a href="tel:+12345678900" class="btn-phone">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          +1 234 567 8900
+        <p>We are available for clinical enrollment inquiries. Your health and data integrity are our priority.</p>
+        <a href="mailto:veltrixlaboratory@gmail.com" class="btn-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          veltrixlaboratory@gmail.com
         </a>
         <div class="action-img-wrap">
           <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Medical_Laboratory_Scientist_US_NIH.jpg" alt="Lab Scientist">
@@ -237,9 +214,8 @@
         <span class="eyebrow-dark">Investigational Therapeutics &amp; Products</span>
         <h2>Our Core Peptides</h2>
         <p>High-purity synthesized compounds targeting metabolic regulation, cellular aging, and structural
-          regeneration. All products exceed 99% purity.</p>
-        <div style="margin-top: 1.5rem;">
-          <a href="productos.html" class="btn btn-outline" style="border-radius: 50px; font-size: 0.88rem; font-weight: 600;">Ver Catálogo y Dossier Completo &rarr;</a>
+          regeneration. All products exceed 99% purity.</p>        <div style="margin-top: 1.5rem;">
+          <a href="products" class="btn btn-outline" style="border-radius: 50px; font-size: 0.88rem; font-weight: 600;">View Full Clinical Dossier &amp; Catalog &rarr;</a>
         </div>
       </div>
 
@@ -247,40 +223,83 @@
         <!-- Retatrutide -->
         <div class="compound-card">
           <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="Retatrutide Vials" />
+            <img src="images/imagenes/retatrutide-60mg.jpg" alt="Retatrutide (60mg)" />
           </div>
           <div class="compound-info">
-            <span class="compound-tag">Metabolic / Obesity</span>
-            <h3>Retatrutide</h3>
-            <p>A novel triple agonist targeting GLP-1, GIP, and glucagon receptors for significant body weight reduction and glycemic control.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Initial Dose:</strong> 5mg - 10mg</li>
-                <li><strong>Protocol:</strong> Subcutaneous (Weekly)</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="retatrutide" aria-label="Ver ficha clínica de Retatrutide" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="compound-tag">Metabolic / Appetite Control</span>
+            <h3>Retatrutide (60mg)</h3>
+            <p>Breakthrough triple GLP-1, GIP, and Glucagon receptor agonist for profound weight reduction and glycemic homeostasis.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="retatrutide" aria-label="View Retatrutide details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- BPC-157 -->
+        <!-- Tirzepatide 100mg -->
         <div class="compound-card">
           <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="BPC-157 Product" />
+            <img src="images/imagenes/tirzepatide-100mg.jpg" alt="Tirzepatide (100mg)" />
           </div>
           <div class="compound-info">
-            <span class="compound-tag">Regenerative</span>
-            <h3>BPC-157</h3>
-            <p>Cytoprotection and structural repair compound. Accelerates tendon, ligament, and muscle repair mechanisms.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Dose:</strong> 2mg - 5mg</li>
-                <li><strong>Protocol:</strong> 5x Weekly (1 Month)</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="bpc157" aria-label="Ver ficha clínica de BPC-157" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="compound-tag">Metabolic / Appetite Control</span>
+            <h3>Tirzepatide (100mg)</h3>
+            <p>Potent dual GIP/GLP-1 receptor agonist for sustained appetite suppression, delayed gastric emptying, and insulin sensitivity.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="tirzepatide_100" aria-label="View Tirzepatide 100mg details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tirzepatide 60mg -->
+        <div class="compound-card">
+          <div class="compound-img">
+            <img src="images/imagenes/TIRZERPATIDE-60mg.jpg" alt="Tirzepatide (60mg)" />
+          </div>
+          <div class="compound-info">
+            <span class="compound-tag">Metabolic / Appetite Control</span>
+            <h3>Tirzepatide (60mg)</h3>
+            <p>Initial titration dose formulated for gradual metabolic tolerance and progressive dual receptor activation.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="tirzepatide_60" aria-label="View Tirzepatide 60mg details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GLOW Blend -->
+        <div class="compound-card">
+          <div class="compound-img">
+            <img src="images/imagenes/glow-70mg.jpg" alt="GLOW Blend (70mg)" />
+          </div>
+          <div class="compound-info">
+            <span class="compound-tag">Anti-Aging &amp; Cellular Repair</span>
+            <h3>GLOW Blend (70mg)</h3>
+            <p>Bioactive triple stack (GHK-Cu + BPC-157 + TB-500) engineered for extensive collagen synthesis, ECM remodeling, and tissue repair.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="glow" aria-label="View GLOW Blend details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KLOW Blend -->
+        <div class="compound-card">
+          <div class="compound-img">
+            <img src="images/imagenes/klow-80mg.jpg" alt="KLOW Blend (80mg)" />
+          </div>
+          <div class="compound-info">
+            <span class="compound-tag">Anti-Aging &amp; Cellular Repair</span>
+            <h3>KLOW Blend (80mg)</h3>
+            <p>Quad-peptide regenerative stack (GHK-Cu + BPC-157 + TB-500 + KPV) providing multi-pathway cytokine modulation and rapid healing.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="klow" aria-label="View KLOW Blend details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
             </div>
           </div>
@@ -289,61 +308,15 @@
         <!-- GHK-Cu -->
         <div class="compound-card">
           <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="GHK-Cu Copper Peptide" />
+            <img src="images/imagenes/ghkcu-100mg.jpg" alt="GHK-Cu (100mg)" />
           </div>
           <div class="compound-info">
-            <span class="compound-tag">Anti-Aging</span>
-            <h3>GHK-Cu</h3>
-            <p>Copper tripeptide that increases collagen and elastin expression, improving skin density and global firmness.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Dose:</strong> 2mg - 5mg</li>
-                <li><strong>Protocol:</strong> Subcutaneous (5x Weekly)</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="ghk_cu" aria-label="Ver ficha clínica de GHK-Cu" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- TB-500 -->
-        <div class="compound-card">
-          <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="TB-500 Research" />
-          </div>
-          <div class="compound-info">
-            <span class="compound-tag">Recovery</span>
-            <h3>TB-500</h3>
-            <p>Promotes neovascularization in ischemic zones and modulates inflammation for structural remodeling.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Stack:</strong> BPC-157 + GHK-Cu</li>
-                <li><strong>Focus:</strong> Musculoskeletal Repair</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="tb500" aria-label="Ver ficha clínica de TB-500" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- KPV -->
-        <div class="compound-card">
-          <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="KPV Peptide" />
-          </div>
-          <div class="compound-info">
-            <span class="compound-tag">Anti-Inflammatory</span>
-            <h3>KPV</h3>
-            <p>Tripeptide used for systemic inflammation reduction, decreasing pro-inflammatory cytokines like IL-1β and TNF-α.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Stack:</strong> Tissue Regeneration</li>
-                <li><strong>Focus:</strong> Cytokine Modulation</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="kpv" aria-label="Ver ficha clínica de KPV" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="compound-tag">Anti-Aging &amp; Cellular Repair</span>
+            <h3>GHK-Cu (100mg)</h3>
+            <p>Pure biological copper tripeptide enhancing Type I &amp; III collagen and elastin expression, skin firmness, and erythema reduction.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="ghk_cu" aria-label="View GHK-Cu details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
             </div>
           </div>
@@ -352,61 +325,100 @@
         <!-- NAD+ -->
         <div class="compound-card">
           <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="NAD+ Therapy" />
+            <img src="images/imagenes/NAD-500mg.jpg" alt="NAD+ (500mg)" />
           </div>
           <div class="compound-info">
-            <span class="compound-tag">Wellness / Energy</span>
-            <h3>NAD+</h3>
-            <p>Crucial coenzyme for mitochondrial function, DNA repair, and overall cellular energy restoration.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Focus:</strong> ATP Synthesis</li>
-                <li><strong>Benefits:</strong> Cognitive &amp; Cellular Longevity</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="nad_plus" aria-label="Ver ficha clínica de NAD+" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="compound-tag">Wellness &amp; Cellular Longevity</span>
+            <h3>NAD+ (500mg)</h3>
+            <p>Vital mitochondrial coenzyme driving cellular ATP biosynthesis, active genomic DNA repair, and sirtuin longevity activation.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="nad_plus" aria-label="View NAD+ details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- GH Secretagogues -->
+        <!-- Ipamorelin -->
         <div class="compound-card">
           <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="GH Secretagogues" />
+            <img src="images/imagenes/ipamorelin-10MG.jpg" alt="Ipamorelin (10mg)" />
           </div>
           <div class="compound-info">
-            <span class="compound-tag">Growth / Metabolic</span>
-            <h3>GH Secretagogues</h3>
-            <p>Including Ipamorelin, CJC-1295, and GHRP-6. Used for body recomposition, recovery acceleration, and hormonal balance.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Focus:</strong> Insulin Sensitivity</li>
-                <li><strong>Benefits:</strong> Lean Mass &amp; Fat Oxidation</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="gh_secretagogues" aria-label="Ver ficha clínica de GH Secretagogues" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="compound-tag">GH Secretagogues</span>
+            <h3>Ipamorelin (10mg)</h3>
+            <p>Selective GH secretagogue stimulating clean physiological pulses without elevating cortisol, prolactin, or basal glucose.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="ipamorelin" aria-label="View Ipamorelin details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
             </div>
           </div>
         </div>
-        
-        <!-- Epitalon -->
+
+        <!-- Tesamorelin -->
         <div class="compound-card">
           <div class="compound-img">
-            <img src="images/peptide_vials.jpg" alt="Epitalon Peptide" />
+            <img src="images/imagenes/tesamorelin-10mg.jpg" alt="Tesamorelin (10mg)" />
           </div>
           <div class="compound-info">
-            <span class="compound-tag">Longevity / Sleep</span>
-            <h3>Epitalon</h3>
-            <p>A synthetic pineal peptide that stimulates telomerase activity and melatonin production, regulating circadian rhythms and cellular aging.</p>
-            <div class="compound-footer">
-              <ul class="compound-details">
-                <li><strong>Focus:</strong> Telomere Elongation</li>
-                <li><strong>Benefits:</strong> Deep Sleep &amp; Rejuvenation</li>
-              </ul>
-              <button type="button" class="compound-btn" data-id="epitalon" aria-label="Ver ficha clínica de Epitalon" title="Ver información clínica">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="compound-tag">GH Secretagogues</span>
+            <h3>Tesamorelin (10mg)</h3>
+            <p>High-specificity GHRH analogue clinically demonstrated for directed lipolysis and visceral intra-abdominal adipose reduction.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="tesamorelin" aria-label="View Tesamorelin details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOTS-c -->
+        <div class="compound-card">
+          <div class="compound-img">
+            <img src="images/imagenes/mots-c-20mg.jpg" alt="MOTS-c (20mg)" />
+          </div>
+          <div class="compound-info">
+            <span class="compound-tag">Wellness &amp; Cellular Longevity</span>
+            <h3>MOTS-c (20mg)</h3>
+            <p>Mitochondrial-derived peptide acting as a master regulator of the AMPK pathway, muscle glucose uptake, and metabolic performance.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="mots_c" aria-label="View MOTS-c details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bacteriostatic Water 10ml -->
+        <div class="compound-card">
+          <div class="compound-img">
+            <img src="images/imagenes/bac-water-10ML.jpg" alt="Bacteriostatic Water (10ml)" />
+          </div>
+          <div class="compound-info">
+            <span class="compound-tag">Solvents &amp; Reconstitution</span>
+            <h3>Bacteriostatic Water (10ml)</h3>
+            <p>Sterile aqueous solution containing 0.9% benzyl alcohol (USP grade) for multi-dose peptide reconstitution and 30-day stability.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="bac_water_10ml" aria-label="View Bacteriostatic Water 10ml details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bacteriostatic Water 3ml -->
+        <div class="compound-card">
+          <div class="compound-img">
+            <img src="images/imagenes/bac-water-3ML.jpg" alt="Bacteriostatic Water (3ml)" />
+          </div>
+          <div class="compound-info">
+            <span class="compound-tag">Solvents &amp; Reconstitution</span>
+            <h3>Bacteriostatic Water (3ml)</h3>
+            <p>Compact sterile aqueous solution with 0.9% benzyl alcohol (USP grade) tailored for individual single-cycle peptide reconstitution.</p>
+            <div class="compound-card-footer">
+              <button type="button" class="compound-btn-plus" data-id="bac_water_3ml" aria-label="View Bacteriostatic Water 3ml details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
             </div>
           </div>
@@ -432,8 +444,8 @@
       <div class="contact-card">
         <!-- Info Panel -->
         <div class="contact-info-panel">
-          <h3>Get in touch</h3>
-          <p>Register your interest to be included in our statistical analysis and potential trial enrollment.</p>
+          <h3>Clinical Inquiries &amp; Trial Enrollment</h3>
+          <p>Register your interest to participate in our active clinical trials, observational studies, and multi-center research statistics.</p>
           
           <div class="info-list">
             <div class="info-item">
@@ -441,8 +453,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               </div>
               <div class="info-text">
-                <strong>Headquarters & Lab</strong>
-                <span>89-16 Jamaica Ave<br>Woodhaven, NY 11421</span>
+                <strong>Headquarters &amp; Lab Facility</strong>
+                <span>89-16 Jamaica Ave<br>Woodhaven, NY 11421, USA</span>
               </div>
             </div>
             
@@ -451,18 +463,18 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div class="info-text">
-                <strong>Email Us</strong>
-                <span>info@veltrixlabs.com<br>support@veltrixlabs.com</span>
+                <strong>Clinical Trials &amp; Research Email</strong>
+                <span>veltrixlaboratory@gmail.com</span>
               </div>
             </div>
             
             <div class="info-item">
               <div class="info-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               </div>
               <div class="info-text">
-                <strong>Call Us</strong>
-                <span>+1 (800) 555-0199</span>
+                <strong>Response &amp; Coordination</strong>
+                <span>Direct email inquiries evaluated within 24 business hours.</span>
               </div>
             </div>
           </div>
@@ -475,42 +487,37 @@
             <div class="form-row">
               <div class="input-group">
                 <label>First Name</label>
-                <input type="text" required placeholder="Name" />
+                <input type="text" name="First Name" required placeholder="Name" />
               </div>
               <div class="input-group">
                 <label>Last Name</label>
-                <input type="text" required placeholder="Last Name" />
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="input-group">
-                <label>Phone</label>
-                <input type="tel" placeholder="Phone" />
-              </div>
-              <div class="input-group">
-                <label>Email</label>
-                <input type="email" required placeholder="Email" />
+                <input type="text" name="Last Name" required placeholder="Last Name" />
               </div>
             </div>
             
             <div class="input-group">
+              <label>Official Email Address</label>
+              <input type="email" name="Email" required placeholder="name@domain.com" />
+            </div>
+            
+            <div class="input-group">
               <label>Subject</label>
-              <select required>
+              <select name="Subject" required>
                 <option value="">Select subject...</option>
-                <option value="metabolic">Metabolic / Weight Management</option>
-                <option value="regenerative">Tissue Regeneration</option>
-                <option value="longevity">Cellular Longevity</option>
-                <option value="other">General Inquiries</option>
+                <option value="Metabolic / Weight Management">Metabolic / Weight Management</option>
+                <option value="Tissue Regeneration">Tissue Regeneration</option>
+                <option value="Cellular Longevity">Cellular Longevity</option>
+                <option value="General Clinical Inquiries">General Clinical Inquiries</option>
               </select>
             </div>
             
             <div class="input-group">
               <label>Message</label>
-              <textarea rows="3" placeholder="Message"></textarea>
+              <textarea name="Message" rows="3" required placeholder="Describe your inquiry or study interest"></textarea>
             </div>
             
-            <button type="submit" class="btn btn-primary btn-block" style="border-radius: 50px; padding: 1rem;">Send Message</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-block" style="border-radius: 50px; padding: 1rem;">Send Message</button>
+            <div id="formStatusMsg" class="form-status-msg" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -527,15 +534,15 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-logo">
-          <a href="index.html" class="logo" aria-label="Veltrix Labs">
-            <img src="images/logo-white-hd.png" alt="Veltrix Labs" class="site-footer-logo-img" style="height: 54px; width: auto; max-height: 56px; display: block;">
+          <a href="./" class="logo" aria-label="Veltrix Labs">
+            <img src="images/logo/logo-white-hd.png" alt="Veltrix Labs" class="site-footer-logo-img" style="height: 54px; width: auto; max-height: 56px; display: block;">
           </a>
         </div>
-        <div class="footer-socials">
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+        <div class="footer-email-contact">
+          <a href="mailto:veltrixlaboratory@gmail.com" class="footer-email-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            veltrixlaboratory@gmail.com
+          </a>
         </div>
       </div>
       
@@ -587,12 +594,12 @@
     
     <div class="footer-bottom-wrapper">
       <div class="container footer-bottom">
-        <p>&copy; 2026 Veltrix Labs. All rights reserved. Powered by ClinicalData.</p>
+        <p>&copy; 2026 Veltrix Labs. All rights reserved. U.S. Clinical Research Division.</p>
         <div class="footer-legal">
-          <a href="#">Term of use</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">Do Not Sell My Personal Information</a>
+          <a href="#header">Home</a>
+          <a href="#research">Clinical Compounds</a>
+          <a href="products">Full Dossier</a>
+          <a href="#contact">Contact Lab</a>
         </div>
       </div>
     </div>
@@ -608,7 +615,7 @@
   </div>
 
   <script src="products-data.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=4.5"></script>
 </body>
 
 </html>
