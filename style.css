@@ -1131,7 +1131,8 @@ img {
 .contact-card {
   background: white;
   border-radius: 16px;
-  box-shadow: var(--shadow-lg);
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 8px 16px -6px rgba(15, 23, 42, 0.04);
   display: flex;
   overflow: hidden;
 }
@@ -1139,8 +1140,8 @@ img {
 .contact-info-panel {
   flex: 1;
   padding: 3rem;
-  background-color: #fafafa;
-  border-right: 1px solid var(--color-border);
+  background-color: #fafbfc;
+  border-right: 1.5px solid #cbd5e1;
 }
 
 .contact-info-panel h3 {
@@ -1231,21 +1232,28 @@ img {
 .input-group textarea {
   width: 100%;
   padding: 0.85rem 1rem;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
   border-radius: 8px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  color: var(--color-text-dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.input-group input:hover,
+.input-group select:hover,
+.input-group textarea:hover {
+  border-color: #94a3b8;
 }
 
 .input-group input:focus,
 .input-group select:focus,
 .input-group textarea:focus {
   outline: none;
-  background-color: white;
+  background-color: #ffffff;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(2,132,199,0.1);
+  box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.15);
 }
 
 /* FORM STATUS NOTIFICATION (INLINE, MODERN) */
@@ -1490,6 +1498,7 @@ img {
   .domains-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .compound-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-card { flex-direction: column; }
+  .contact-info-panel { border-right: none; border-bottom: 1.5px solid #cbd5e1; }
   .contact-info-panel, .contact-form-panel { padding: 2rem; }
 }
 
