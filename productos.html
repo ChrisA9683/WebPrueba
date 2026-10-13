@@ -223,14 +223,49 @@
         });
       });
 
-      // Handle hash anchor jump
-      if (window.location.hash) {
-        setTimeout(() => {
-          const el = document.querySelector(window.location.hash);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 200);
+      // Handle hash anchor jump or category filter
+      function checkHashRoute() {
+        if (!window.location.hash) return;
+        const hashVal = window.location.hash.replace('#', '');
+        const matchingTab = document.querySelector(`.filter-tab[data-filter="${hashVal}"]`);
+        if (matchingTab) {
+          document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+          matchingTab.classList.add('active');
+          renderCards(hashVal);
+        } else {
+          setTimeout(() => {
+            const el = document.querySelector(window.location.hash);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 200);
+        }
+      }
+
+      checkHashRoute();
+      window.addEventListener('hashchange', checkHashRoute);
+
+      // Back to top floating button
+      const backBtn = document.getElementById('backToTopBtn');
+      if (backBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 350) {
+            backBtn.classList.add('visible');
+          } else {
+            backBtn.classList.remove('visible');
+          }
+        }, { passive: true });
+
+        backBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       }
     });
   </script>
+
+  <!-- BACK TO TOP FLOATING BUTTON -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Return to top" title="Return to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 </body>
 </html>

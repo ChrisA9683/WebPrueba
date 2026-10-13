@@ -153,6 +153,7 @@
 
   <!-- WHY CHOOSE US -->
   <section class="why-choose" id="impact">
+    <canvas id="ps3WavesCanvas" class="ps3-waves-canvas" aria-hidden="true"></canvas>
     <div class="container why-choose-grid">
       <!-- Left Column (Image) -->
       <div class="why-img-col">
@@ -217,8 +218,7 @@
             Advanced Technology &amp; Facilities
           </li>
         </ul>
-        <a href="#contact" class="btn btn-outline"
-          style="border-radius: 6px; border-color: #cbd5e1; color: var(--color-text);">Learn More About Us &rarr;</a>
+        <a href="#contact" class="btn btn-outline why-learn-btn">Learn More About Us &rarr;</a>
       </div>
 
       <!-- Right Column (Action) -->
@@ -692,19 +692,19 @@
         <div class="footer-col">
           <h4>Research Areas</h4>
           <ul>
-            <li><a href="#">Metabolic Protocols</a></li>
-            <li><a href="#">Regenerative Studies</a></li>
-            <li><a href="#">Longevity &amp; Aging</a></li>
-            <li><a href="#">Hydration Science</a></li>
+            <li><a href="products#metabolic">Metabolic Protocols</a></li>
+            <li><a href="products#antiaging">Regenerative Studies</a></li>
+            <li><a href="products#wellness">Longevity &amp; Aging</a></li>
+            <li><a href="products#solventes">Hydration Science</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Organization</h4>
           <ul>
-            <li><a href="#">About the Lab</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">IRB Approvals</a></li>
+            <li><a href="#impact">About the Lab</a></li>
+            <li><a href="#contact">Careers</a></li>
+            <li><a href="#impact">IRB Approvals</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
@@ -749,8 +749,15 @@
     </div>
   </div>
 
+  <!-- BACK TO TOP FLOATING BUTTON -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Return to top" title="Return to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
   <script src="products-data.js"></script>
-  <script src="app.js?v=4.5"></script>
+  <script src="app.js?v=4.6"></script>
 </body>
 
 </html>

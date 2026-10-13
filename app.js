@@ -129,6 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Stat Number Counters
   initStatCounters();
+
+  // Initialize Back To Top Floating Button
+  initBackToTop();
 });
 
 // ==========================================
@@ -509,4 +512,30 @@ function initPS3Waves() {
     observer.observe(canvas.parentElement);
   }
   animationFrameId = requestAnimationFrame(draw);
+}
+
+// ==========================================
+// BACK TO TOP BUTTON LOGIC
+// ==========================================
+function initBackToTop() {
+  const btn = document.getElementById('backToTopBtn');
+  if (!btn) return;
+
+  function toggleBtn() {
+    if (window.scrollY > 350) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBtn, { passive: true });
+  toggleBtn();
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
