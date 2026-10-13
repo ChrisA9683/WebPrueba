@@ -8,9 +8,9 @@ RewriteRule ^ %1 [R=301,L]
 RewriteCond %{THE_REQUEST} /index [NC]
 RewriteRule ^(.*)index$ $1 [R=301,L]
 
-# 3. Mapear internamente /products o /dossier a productos.html
-RewriteRule ^products/?$ productos.html [NC,L]
-RewriteRule ^dossier/?$ productos.html [NC,L]
+# 3. Mapear internamente /dossier o /productos a products/
+RewriteRule ^dossier/?$ products/ [NC,L]
+RewriteRule ^productos/?$ products/ [NC,R=301,L]
 
 # 4. Resolver cualquier archivo sin .html internamente
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 function initScrollReveal() {
   const targets = document.querySelectorAll(
-    '.stat-item, .why-img-col, .why-text-col, .check-list li, .why-action-col, .section-header, .compound-card, .contact-card, .info-item, .contact-form-panel, .full-map'
+    '.stat-item, .why-img-col, .why-text-col, .check-list li, .why-action-col, .section-header, .compound-card, .contact-card, .info-item, .contact-form-panel'
   );
 
   if (!targets.length) return;
