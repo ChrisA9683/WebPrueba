@@ -239,21 +239,21 @@ const PRODUCTS_DATA = {
 
   bac_water_10ml: {
     id: "bac_water_10ml",
-    name: "Bacteriostatic Water (10ml)",
+    name: "Bacteriostatic Water (10ML)",
     category: "Solvents & Reconstitution",
     badge: "Sterile Solution with 0.9% Benzyl Alcohol — USP Grade",
     image: "images/imagenes/bac-water-10ML.jpg",
     purity: "USP Pharmaceutical Grade",
-    summary: "10ml multi-dose sterile aqueous preparation containing 0.9% benzyl alcohol as a bacteriostatic preservative for precise reconstitution and preservation of lyophilized peptide vials.",
+    summary: "10ML multi-dose sterile aqueous preparation containing 0.9% benzyl alcohol as a bacteriostatic preservative for precise reconstitution and preservation of lyophilized peptide vials.",
     mechanism: "The bacteriostatic agent inhibits bacterial proliferation within multi-dose vials, maintaining chemical stability, peptide integrity, and sterility for up to 30 days under refrigeration (2°C - 8°C).",
-    dose: "1ml to 3ml per lyophilized vial",
+    dose: "1ML to 3ML per lyophilized vial",
     protocol: "Gentle reconstitution angled along internal vial glass wall",
     frequency: "Used as required for peptide reconstitution. Multi-vial capacity.",
     stack: "Essential reconstitution medium across all lyophilized compounds.",
     indications: [
       "Certified sterile reconstitution for bioactive research peptides",
       "Preserves microbiological sterility for up to 30 days under refrigeration (2°C - 8°C)",
-      "10ml presentation — extended volume for comprehensive research protocols",
+      "10ML presentation — extended volume for comprehensive research protocols",
       "Formulated according to USP analytical laboratory standards"
     ],
     contraindications: "Not for direct intravenous administration. Avoid in cases of benzyl alcohol sensitivity."
@@ -261,21 +261,21 @@ const PRODUCTS_DATA = {
 
   bac_water_3ml: {
     id: "bac_water_3ml",
-    name: "Bacteriostatic Water (3ml)",
+    name: "Bacteriostatic Water (3ML)",
     category: "Solvents & Reconstitution",
     badge: "Sterile Solution with 0.9% Benzyl Alcohol — USP Grade",
     image: "images/imagenes/bac-water-3ML.jpg",
     purity: "USP Pharmaceutical Grade",
-    summary: "Compact 3ml sterile aqueous solution with 0.9% benzyl alcohol designed for single-compound reconstitution and personal protocol cycles.",
+    summary: "Compact 3ML sterile aqueous solution with 0.9% benzyl alcohol designed for single-compound reconstitution and personal protocol cycles.",
     mechanism: "Bacteriostatic preservation prevents microbial colonization and maintains peptide molecular structure under controlled cold-chain storage.",
-    dose: "0.5ml to 1ml per lyophilized vial",
+    dose: "0.5ML to 1ML per lyophilized vial",
     protocol: "Slow dispensing against vial wall to prevent peptide mechanical degradation",
     frequency: "Single cycle format. Dedicated per lyophilized compound vial.",
     stack: "Essential reconstitution medium for single-vial protocols.",
     indications: [
       "Exact reconstitution of lyophilized compounds in compact format",
       "Sterility maintained for up to 30 days under cold-chain refrigeration",
-      "Compact 3ml format — minimal residue and ideal single-compound pairing",
+      "Compact 3ML format — minimal residue and ideal single-compound pairing",
       "Formulated according to USP analytical laboratory standards"
     ],
     contraindications: "Not for direct intravenous injection. Avoid in cases of benzyl alcohol sensitivity."
