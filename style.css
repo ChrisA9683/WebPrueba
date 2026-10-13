@@ -1869,8 +1869,8 @@ img {
   position: relative;
   background: #ffffff;
   border-radius: 20px;
-  max-width: 680px;
-  width: 92%;
+  max-width: 740px;
+  width: 94%;
   overflow: hidden;
   box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3);
   transform: translateY(20px) scale(0.96);
@@ -2013,10 +2013,16 @@ img {
 
 /* RESPONSIVE PARA CELULAR */
 @media (max-width: 640px) {
+  .product-modal {
+    padding: 0.85rem 0.65rem;
+  }
+
   .product-modal-container {
-    max-height: 90vh;
+    max-height: 92vh;
     overflow-y: auto;
-    width: 94%;
+    width: 96%;
+    max-width: 540px;
+    border-radius: 20px;
   }
 
   .modal-showcase-card {
@@ -2038,7 +2044,7 @@ img {
 
   .modal-showcase-info-pane {
     width: 100%;
-    padding: 1.25rem 1.25rem 1.5rem;
+    padding: 1.35rem 1.35rem 1.5rem;
   }
 
   .modal-showcase-info-pane h2 {
@@ -2054,6 +2060,21 @@ img {
     width: 100%;
     text-align: center;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-modal {
+    padding: 0.65rem 0.4rem;
+  }
+
+  .product-modal-container {
+    width: 98%;
+    border-radius: 18px;
+  }
+
+  .modal-showcase-info-pane {
+    padding: 1.2rem 1.15rem 1.4rem;
   }
 }
 
