@@ -14,7 +14,7 @@
     rel="stylesheet" />
   <base href="../" />
   <link rel="icon" type="image/png" href="images/logo/logo-hd.png" />
-  <link rel="stylesheet" href="style.css?v=4.6" />
+  <link rel="stylesheet" href="style.css?v=5.6" />
   <script>document.documentElement.classList.add('js-reveal');</script>
 </head>
 
@@ -247,15 +247,20 @@
       // Back to top floating button
       const backBtn = document.getElementById('backToTopBtn');
       if (backBtn) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 350) {
+        function toggleBackBtn() {
+          const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          if (scrollPos > 300) {
             backBtn.classList.add('visible');
           } else {
             backBtn.classList.remove('visible');
           }
-        }, { passive: true });
+        }
+        window.addEventListener('scroll', toggleBackBtn, { passive: true });
+        window.addEventListener('resize', toggleBackBtn, { passive: true });
+        toggleBackBtn();
 
-        backBtn.addEventListener('click', () => {
+        backBtn.addEventListener('click', (e) => {
+          e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
@@ -263,8 +268,9 @@
   </script>
 
   <!-- BACK TO TOP FLOATING BUTTON -->
-  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Return to top" title="Return to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Return to top" title="Return to top"
+    style="position: fixed !important; bottom: 2.2rem !important; right: 2.2rem !important; width: 50px !important; height: 50px !important; border-radius: 50% !important; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important; border: 2px solid rgba(255,255,255,0.4) !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 8px 24px rgba(2,132,199,0.45), 0 3px 8px rgba(0,0,0,0.2) !important; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(20px) scale(0.85); transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1), visibility 0.35s ease, background 0.25s ease, box-shadow 0.25s ease; z-index: 999999 !important; outline: none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; stroke: #ffffff; pointer-events: none;">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
