@@ -355,8 +355,10 @@ function initPS3Waves() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width;
     height = rect.height;
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
     ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
     ctx.scale(dpr, dpr);
   }
@@ -364,62 +366,48 @@ function initPS3Waves() {
   window.addEventListener('resize', resize);
   resize();
 
-  // Multi-layered PS3 XMB ribbons with harmonious frequencies and glowing crests
+  // Multi-layered PS3 XMB ribbons with subtle, discreet clinical tones on light background
   const ribbons = [
     {
-      baseYPercent: 0.52,
-      thickness: 150,
-      speed: 0.007,
-      colorStart: 'rgba(56, 189, 248, 0.22)',
-      colorEnd: 'rgba(2, 132, 199, 0.03)',
-      edgeColor: 'rgba(14, 165, 233, 0.45)',
-      edgeGlow: 'rgba(255, 255, 255, 0.8)',
-      harmonics: [
-        { freq: 0.0016, amp: 55, speed: 1.0 },
-        { freq: 0.0035, amp: 30, speed: 1.4 },
-        { freq: 0.0008, amp: 20, speed: -0.8 }
-      ]
-    },
-    {
-      baseYPercent: 0.46,
-      thickness: 180,
-      speed: 0.005,
-      colorStart: 'rgba(14, 165, 233, 0.18)',
-      colorEnd: 'rgba(56, 189, 248, 0.02)',
-      edgeColor: 'rgba(56, 189, 248, 0.4)',
-      edgeGlow: 'rgba(255, 255, 255, 0.7)',
-      harmonics: [
-        { freq: 0.0012, amp: 65, speed: 0.9 },
-        { freq: 0.0028, amp: 35, speed: -1.2 },
-        { freq: 0.0042, amp: 15, speed: 1.6 }
-      ]
-    },
-    {
-      baseYPercent: 0.62,
-      thickness: 160,
-      speed: 0.008,
-      colorStart: 'rgba(37, 99, 235, 0.13)',
-      colorEnd: 'rgba(14, 165, 233, 0.02)',
-      edgeColor: 'rgba(37, 99, 235, 0.35)',
-      edgeGlow: 'rgba(186, 230, 253, 0.65)',
-      harmonics: [
-        { freq: 0.0018, amp: 45, speed: 1.1 },
-        { freq: 0.0032, amp: 25, speed: 1.5 },
-        { freq: 0.0009, amp: 30, speed: -0.7 }
-      ]
-    },
-    {
-      baseYPercent: 0.40,
-      thickness: 110,
-      speed: 0.009,
-      colorStart: 'rgba(56, 189, 248, 0.16)',
-      colorEnd: 'rgba(255, 255, 255, 0.01)',
-      edgeColor: 'rgba(125, 211, 252, 0.55)',
+      baseYPercent: 0.50,
+      thickness: 130,
+      speed: 0.004,
+      colorStart: 'rgba(2, 132, 199, 0.07)',
+      colorEnd: 'rgba(56, 189, 248, 0.01)',
+      edgeColor: 'rgba(2, 132, 199, 0.28)',
       edgeGlow: 'rgba(255, 255, 255, 0.85)',
       harmonics: [
-        { freq: 0.0022, amp: 40, speed: 1.3 },
-        { freq: 0.0040, amp: 20, speed: -1.1 },
-        { freq: 0.0014, amp: 25, speed: 0.8 }
+        { freq: 0.0016, amp: 40, speed: 1.0 },
+        { freq: 0.0035, amp: 22, speed: 1.3 },
+        { freq: 0.0008, amp: 16, speed: -0.7 }
+      ]
+    },
+    {
+      baseYPercent: 0.44,
+      thickness: 150,
+      speed: 0.003,
+      colorStart: 'rgba(14, 165, 233, 0.06)',
+      colorEnd: 'rgba(56, 189, 248, 0.01)',
+      edgeColor: 'rgba(14, 165, 233, 0.25)',
+      edgeGlow: 'rgba(255, 255, 255, 0.75)',
+      harmonics: [
+        { freq: 0.0012, amp: 50, speed: 0.9 },
+        { freq: 0.0028, amp: 26, speed: -1.1 },
+        { freq: 0.0042, amp: 12, speed: 1.4 }
+      ]
+    },
+    {
+      baseYPercent: 0.60,
+      thickness: 120,
+      speed: 0.005,
+      colorStart: 'rgba(37, 99, 235, 0.05)',
+      colorEnd: 'rgba(14, 165, 233, 0.01)',
+      edgeColor: 'rgba(37, 99, 235, 0.22)',
+      edgeGlow: 'rgba(186, 230, 253, 0.6)',
+      harmonics: [
+        { freq: 0.0018, amp: 35, speed: 1.1 },
+        { freq: 0.0032, amp: 18, speed: 1.4 },
+        { freq: 0.0009, amp: 20, speed: -0.6 }
       ]
     }
   ];
