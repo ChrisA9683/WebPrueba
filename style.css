@@ -1131,7 +1131,7 @@ img {
 .contact-card {
   background: white;
   border-radius: 16px;
-  border: 1.5px solid #cbd5e1;
+  border: 1px solid #cbd5e1;
   box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 8px 16px -6px rgba(15, 23, 42, 0.04);
   display: flex;
   overflow: hidden;
@@ -1141,7 +1141,7 @@ img {
   flex: 1;
   padding: 3rem;
   background-color: #fafbfc;
-  border-right: 1.5px solid #cbd5e1;
+  border-right: 1px solid #cbd5e1;
 }
 
 .contact-info-panel h3 {
@@ -1233,7 +1233,7 @@ img {
   width: 100%;
   padding: 0.85rem 1rem;
   background-color: #ffffff;
-  border: 1.5px solid #cbd5e1;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -1321,7 +1321,11 @@ img {
   height: 450px;
   margin-top: 4rem;
   display: block;
-  background: #f8fafc url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="%23e2e8f0" stroke-width="1"><path d="M0 30h60M30 0v60"/></svg>');
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+    linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+  background-size: 30px 30px;
   position: relative;
   overflow: hidden;
 }
@@ -1498,7 +1502,7 @@ img {
   .domains-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .compound-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-card { flex-direction: column; }
-  .contact-info-panel { border-right: none; border-bottom: 1.5px solid #cbd5e1; }
+  .contact-info-panel { border-right: none; border-bottom: 1px solid #cbd5e1; }
   .contact-info-panel, .contact-form-panel { padding: 2rem; }
 }
 
